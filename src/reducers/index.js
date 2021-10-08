@@ -1,10 +1,9 @@
-import counterReducer from "./counter";
-import loggedReducer from "./isLogged";
-import  combinedReducers  from 'redux';
+import { combinedReducers } from redux;
+import home from './home_reducer';
+import shop from './shop_reducer'
 
-const allReducers = combinedReducers({
-    counter: counterReducer,
-    isLogged: loggedReducer
-});
+const rootReducer = combinedReducers ({
+    home, shop
+})
 
-export default allReducers;
+export default rootReducer;
