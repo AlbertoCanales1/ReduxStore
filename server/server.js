@@ -1,7 +1,7 @@
 const express = require('express');
 const { ApolloServer } = require('apollo-server-express');
 const path = require('path');
-const mongoose = require ('mongoose')
+
 
 const { typeDefs, resolvers } = require('./schemas');
 const { authMiddleware } = require('./utils/auth');
@@ -11,15 +11,7 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 
 
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/budget',
-  {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
-  },
-);
+
 
 
 const server = new ApolloServer({
