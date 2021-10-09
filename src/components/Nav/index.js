@@ -1,9 +1,11 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Nav() {
-
+const store = useSelector (state => state)
+console.log (store.products);
   function showNavigation() {
     if (Auth.loggedIn()) {
       return (
